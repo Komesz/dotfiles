@@ -6,7 +6,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
-    "modules-left": ["clock","custom/weather","wlr/workspaces"],
+    "modules-left": ["clock","custom/weather","cpu", "memory","wlr/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
     "hyprland/window": {
@@ -14,21 +14,20 @@
     },
 
     "wlr/workspaces": {
-        "disable-scroll": true,
+        "disable-scroll": false,
         "all-outputs": true,
         "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
+        "format": "{icon}",
+       	"format-icons": {
+		      "1": "",
+		      "2": "",
+		      "3": "",
+		      "4": "",
+		      "5": "",
+		      "focused": "",
+		      "default": ""
+	      },
+	    "sort-by-number": true
     },
     
     "custom/power_profile":{
@@ -125,6 +124,15 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+    },
+
+    "cpu": {
+      "format": "󰘚 {usage}%",
+      "tooltip": false
+    },
+
+    "memory": {
+      "format": "󰍛 {used} GiB"
     },
 
     "bluetooth": {
